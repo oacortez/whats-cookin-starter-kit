@@ -106,4 +106,21 @@ beforeEach(() => {
     expect(Recipe).to.be.a('function');
   });
 
+  it('Should be an instance of Recipe', () => {
+    expect(recipe).to.be.an.instanceof(Recipe);
+  });
+
+  it('Should be able to store all it\'s information', () => {
+    /** todo: this it block should : this class should be able to store its properties / values 
+     * this recipe has all properties that have a value from the data from ingrediants 
+     */ 
+    expect(recipe.id).to.equal(recipeData.id);
+    expect(recipe.image).to.equal(recipeData.image);
+    expect(recipe.ingredients).to.equal(recipeData.ingredients);
+    expect(recipe.instructors).to.equal(recipeData.instructors);
+    expect(recipe.name).to.equal(recipeData.name);
+    expect(recipeData.tags).to.equal(recipeData.tags);
+  });
+
+  
 });
