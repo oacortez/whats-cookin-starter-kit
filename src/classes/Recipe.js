@@ -9,5 +9,9 @@ class Recipe {
     this.ingredientsCost = 0;
   }
 
-  
+  ingredientNames(ingredientsData) {
+
+  }
 }
+
+export default Recipe;
