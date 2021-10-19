@@ -9,8 +9,16 @@ class Recipe {
     this.ingredientsCost = 0;
   }
 
-  ingredientNames(ingredientsData) {
-
+  getIngredientNames(ingredientsData) {
+    let ingredientName = []
+      this.ingredients.map((item) => {
+      ingredientsData.forEach((ingredient) => {
+        if(item.id === ingredient.id) {
+          ingredientName.push(ingredient.name);
+        }
+      });
+    });
+    return ingredientName;
   }
 }
 
