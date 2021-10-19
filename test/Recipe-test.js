@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import Recipe from '../src/classes/Recipe.js';
-import ingredients from '../src/data/ingredients';
+import ingredientsData from '../src/data/ingredients';
 
 
 describe('Recipe', () => {
@@ -26,41 +26,6 @@ beforeEach(() => {
         "amount": 40,
         "unit": "g"
       }
-    },
-    {
-      "id": 1125,
-      "quantity": {
-        "amount": 1,
-        "unit": ""
-      }
-    },
-    {
-      "id": 2047,
-      "quantity": {
-        "amount": 1,
-        "unit": "pinch"
-      }
-    },
-    {
-      "id": 12023,
-      "quantity": {
-        "amount": 40,
-        "unit": "g"
-      }
-    },
-    {
-      "id": 19335,
-      "quantity": {
-        "amount": 80,
-        "unit": "g"
-      }
-    },
-    {
-      "id": 1145,
-      "quantity": {
-        "amount": 1,
-        "unit": "stick"
-      }
     }
   ],
   "instructions": [
@@ -71,22 +36,6 @@ beforeEach(() => {
     {
       "instruction": "Roll it to a log approximately 2” across. For me it’s easier to work when the dough is wrapped in plastic wrap. While rolling, unwrap some parts of plastic wrap then roll again. Form a nice shape. I wasn't paying attention so my log is flat on one side (see step 11)!Wrap the logs tightly in plastic wrap and refrigerate until firm, about 1 hour.Preheat the oven to 350° F (175° C).",
       "number": 2
-    },
-    {
-      "instruction": "Remove the dough from plastic wrap and cut into discs about ¼ inch thick (if you prefer thicker cookies, cut into discs about ½ inch and you get 20 cookies total).",
-      "number": 3
-    },
-    {
-      "instruction": "Place them on two baking sheets lined with parchment paper.",
-      "number": 4
-    },
-    {
-      "instruction": "Bake for about 15 minutes, or until lightly browned around the edges.",
-      "number": 5
-    },
-    {
-      "instruction": "Remove from the oven and allow to cool on the baking sheet for about 10 minutes. Then transfer to a wire rack to cool completely. Store cookies in an airtight container. Cookies will last for a day or two.",
-      "number": 6
     }
   ],
   "name": "Sesame Cookies",
@@ -122,5 +71,15 @@ beforeEach(() => {
     expect(recipeData.tags).to.equal(recipeData.tags);
   });
 
-  
+  it.only('Should determine the names of ingredients needed', () => {
+    /** Todo : 
+     * 
+     */
+    console.log(ingredientsData);
+    const ingredients = recipe.getIngredientNames(ingredientsData)
+    const answer = ["wheat flour", "blanched almond flour"];
+
+    expect(ingredients).to.deep.equal(answer);
+  });
+
 });
