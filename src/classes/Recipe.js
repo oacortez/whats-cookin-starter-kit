@@ -20,6 +20,9 @@ class Recipe {
     });
     return ingredientName;
   }
+
+  ingredientCost() {
+  }
 }
 
 export default Recipe;
